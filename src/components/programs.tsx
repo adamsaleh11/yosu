@@ -1,7 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { programs } from "../data/programData";
-import { Users, ChevronDown } from "lucide-react"; // Importing Users and ChevronDown icons
+import { Users, ChevronDown } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,9 +11,10 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "./dropdown";
-import { Button } from "./button"; // Assuming you're using Shadcn's Button component
+import { Button } from "./button";
 
-export const Programs = ({ redirectUrl }) => {
+export const Programs = () => {
+  const router = useRouter();
   const clubs = [...new Set(programs.map((club) => club.club))]; // Unique club names
   const [selectedClub, setSelectedClub] = useState<string | null>(null);
 
@@ -30,11 +32,8 @@ export const Programs = ({ redirectUrl }) => {
   return (
     <div className="programs-section bg-[#F5F5F5] w-full py-12">
       <div className="container mx-auto text-center">
-        <h1 className="text-3xl font-bold mb-4">Soccer Programs</h1>
-        <p className="text-gray-600 mb-8 px-4">
-          Discover our youth soccer programs available in different locations
-          across Ontario.
-        </p>
+        <h1 className="text-3xl font-bold mb-4">Programs</h1>
+        <p className="text-gray-600 mb-8 px-4"></p>
 
         {/* Dropdown Menu for Club Selection - Aligned with First Program Card */}
         <div className="flex justify-start mb-8 pl-4">
@@ -98,7 +97,7 @@ export const Programs = ({ redirectUrl }) => {
 
                   <hr className="border-t-2 border-[#bce0fd] my-4" />
 
-                  {/* Program Details */}
+                  {/* Program Details with ⚽️ emoji */}
                   <div className="text-left px-2">
                     <ul className="list-none space-y-2 text-[#3fa9f5] text-sm">
                       <li>{program.fee}</li>
@@ -113,12 +112,16 @@ export const Programs = ({ redirectUrl }) => {
 
                   <hr className="border-t-2 border-[#bce0fd] my-4" />
 
-                  <a
-                    href={redirectUrl}
+                  <button
+                    onClick={() =>
+                      router.push(
+                        `/registration?ageGroup=${program.ageGroup}&club=${selectedClub}`
+                      )
+                    }
                     className="block bg-[#3FA9F5] text-white text-center py-2 rounded hover:bg-[#349cd7] transition duration-300"
                   >
                     Join Now
-                  </a>
+                  </button>
                 </div>
               ))}
             </div>

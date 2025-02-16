@@ -17,8 +17,8 @@ export default function ProgramsPage() {
           <div className="text-center text-white px-4">
             <h1 className="text-3xl sm:text-4xl font-bold mb-2">Programs</h1>
             <p className="text-sm sm:text-lg">
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-              officia deserunt.
+              Empowering young athletes through fun, skill-building, and
+              teamwork in our youth sports leagues.
             </p>
           </div>
         </div>

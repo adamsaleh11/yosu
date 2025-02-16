@@ -1,39 +1,13 @@
 "use client";
 import React from "react";
-
-const locations = [
-  {
-    name: "Ottawa Soccer Field",
-    city: "Ottawa, ON",
-    description:
-      "A premier soccer field located in the heart of Ottawa, offering excellent facilities.",
-    link: "https://www.google.com/maps?q=Ottawa+Soccer+Field",
-  },
-  {
-    name: "Toronto Sports Arena",
-    city: "Toronto, ON",
-    description:
-      "One of the largest sports arenas in Toronto, perfect for multi-sport activities.",
-    link: "https://www.google.com/maps?q=Toronto+Sports+Arena",
-  },
-  {
-    name: "Vancouver Athletic Park",
-    city: "Vancouver, BC",
-    description:
-      "A stunning athletic park in Vancouver, surrounded by breathtaking views.",
-    link: "https://www.google.com/maps?q=Vancouver+Athletic+Park",
-  },
-];
+import { locations } from "../data/locationsData"; // Import the data
 
 export const Locations = () => {
   return (
     <div className="locations-section w-full py-12">
       <div className="container mx-auto px-4">
         <h1 className="text-3xl font-bold mb-4 text-black">Locations</h1>
-        <p className="text-gray-600 mb-8">
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-          officia deserunt.
-        </p>
+        <p className="text-gray-600 mb-8"></p>
 
         {/* Responsive Locations Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">

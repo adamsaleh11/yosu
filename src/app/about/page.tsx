@@ -16,10 +16,10 @@ export default function AboutPage() {
       >
         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <div className="text-center text-white px-4">
-            <h1 className="text-3xl sm:text-4xl font-bold mb-2">About</h1>
+            <h1 className="text-3xl sm:text-4xl font-bold mb-2">About Us</h1>
             <p className="text-sm sm:text-lg">
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-              officia deserunt.
+              Empowering young athletes through fun, skill-building, and
+              teamwork in our youth sports leagues.
             </p>
           </div>
         </div>
@@ -30,27 +30,45 @@ export default function AboutPage() {
         {/* Section 1 */}
         <section className="mb-16">
           <h2 className="text-2xl sm:text-3xl font-bold mb-6">
-            Excepteur sint occaecat cupidatat.
+            Building Confidence and Skills Through Sports
           </h2>
           <div className="flex flex-col lg:flex-row items-start gap-8">
             <div className="lg:w-1/2 text-sm sm:text-base leading-relaxed text-gray-700">
               <p className="mb-4">
-                Culpa qui officia deserunt mollit anim id est laborum. Sed ut
-                perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                quae ab illo inventore veritatis et quasi architecto beatae
-                vitae dicta sunt explicabo.
+                At YOSU, we’re a community group of ex-soccer, basketball,
+                tennis, and volleyball players, sports coaches, and sports
+                enthusiasts. We’re proud to be the first sports organization in
+                Ottawa to offer multiple sports (both individual and team
+                sports) for young athletes. Our unique approach gives children
+                the opportunity to explore different sports at an early stage of
+                their lives, helping them discover their passions and develop a
+                well-rounded skill set.
               </p>
               <p className="mb-4">
-                Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
-                aut fugit, sed quia consequuntur magni dolores eos qui ratione
-                voluptatem sequi nesciunt.
+                We believe in the power of sports to shape young minds and
+                bodies. Our leagues are designed to provide a safe, inclusive,
+                and fun environment where kids can learn the fundamentals of
+                soccer, develop teamwork skills, and build lifelong friendships.
+                Whether your child is just starting out or looking to improve
+                their skills, our programs cater to all levels. With experienced
+                coaches, age-appropriate training, and a focus on sportsmanship,
+                we’re here to help your child grow both on and off the field.
+              </p>
+              <p className="mb-4">
+                Our methodology of two days of activities per week (practice and
+                game) ensures that kids have fun playing the "beautiful game" of
+                soccer while also enjoying other sports or social activities. We
+                are not fans of early specialization in sports for children. By
+                giving them the opportunity to play different sports up to the
+                age of 11/12, we hope they will be able to choose the sports
+                they love most and continue to develop their talents to the next
+                level.
               </p>
             </div>
             <div className="lg:w-1/2">
               <Image
                 src="/about2.png"
-                alt="About Us Image 2"
+                alt="Kids playing soccer"
                 width={800}
                 height={450}
                 className="rounded-lg object-cover w-full"
@@ -65,17 +83,43 @@ export default function AboutPage() {
           <div className="flex flex-col lg:flex-row items-start gap-8 mb-8">
             <div className="lg:w-1/2">
               <h2 className="text-2xl sm:text-3xl font-bold">
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                qui
+                Why Choose Our Youth Sports League?
               </h2>
             </div>
             <div className="lg:w-1/2 text-sm sm:text-base leading-relaxed text-gray-700">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
+                Our league is more than just soccer—it’s a community. We offer
+                programs for kids of all ages, from U4 to U10, with flexible
+                schedules and affordable fees. From spring to fall, we provide a
+                variety of leagues and events to keep your child active and
+                engaged throughout the year.
               </p>
+              <p className="mt-4">
+                <strong>Our Objectives:</strong>
+              </p>
+              <ul className="list-disc pl-6 mt-2">
+                <li>
+                  Create an environment that satisfies children's needs—mentally
+                  and physically. Sports help not only with physical development
+                  but also with life skills and identity formation.
+                </li>
+                <li>
+                  Introduce children to a variety of team sports (soccer,
+                  hockey, basketball, volleyball, football, baseball) and
+                  individual sports (tennis, gymnastics, track and field) to
+                  give them a strong foundation for lifelong activity.
+                </li>
+                <li>
+                  Teach discipline, persistence, and concentration through
+                  sports.
+                </li>
+                <li>Improve physical motor skills and functional abilities.</li>
+                <li>Develop social skills, teamwork, and communication.</li>
+                <li>
+                  Help children become more independent, stronger, and
+                  resilient.
+                </li>
+              </ul>
             </div>
           </div>
 
@@ -83,21 +127,21 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <Image
               src="/about3.png"
-              alt="About Us Image 3"
+              alt="Kids practicing soccer"
               width={300}
               height={200}
               className="rounded-lg object-cover w-full h-[250px]"
             />
             <Image
               src="/about4.png"
-              alt="About Us Image 4"
+              alt="Team celebration"
               width={300}
               height={200}
               className="rounded-lg object-cover w-full h-[250px]"
             />
             <Image
               src="/about5.png"
-              alt="About Us Image 5"
+              alt="Coaches guiding kids"
               width={300}
               height={200}
               className="rounded-lg object-cover w-full h-[250px]"
