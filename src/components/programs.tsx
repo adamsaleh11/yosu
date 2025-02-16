@@ -1,91 +1,82 @@
 "use client";
 import React from "react";
+import { programs } from "../data/programData";
 
 export const Programs = ({ redirectUrl }) => {
-  const programData = [
-    {
-      category: "Soccer",
-      title: "U17 Program",
-      subtitle: "Ages 17-18",
-      description:
-        "Learn advanced soccer techniques and teamwork in our U17 program.",
-      offerings: ["Program Offering", "Program Offering", "-", "-"],
-    },
-    {
-      category: "Basketball",
-      title: "Youth Hoops",
-      subtitle: "Ages 12-15",
-      description:
-        "Develop your basketball skills and enjoy friendly competitions.",
-      offerings: ["Program Offering", "Program Offering", "-", "-"],
-    },
-    {
-      category: "Tennis",
-      title: "Junior Tennis",
-      subtitle: "Ages 10-14",
-      description: "Learn the fundamentals of tennis in a fun environment.",
-      offerings: ["Program Offering", "Program Offering", "-", "-"],
-    },
-    {
-      category: "Volleyball",
-      title: "Spike Academy",
-      subtitle: "Ages 13-16",
-      description:
-        "Master volleyball skills and participate in exciting tournaments.",
-      offerings: ["Program Offering", "Program Offering", "-", "-"],
-    },
-  ];
-
   return (
     <div className="programs-section bg-[#F5F5F5] w-full py-12">
       <div className="container mx-auto text-center">
-        <h1 className="text-3xl font-bold mb-4">Programs</h1>
+        <h1 className="text-3xl font-bold mb-4">Soccer Programs</h1>
         <p className="text-gray-600 mb-8 px-4">
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-          officia deserunt.
+          Discover our youth soccer programs available in different locations
+          across Ontario.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-12 px-4">
-          {programData.map((program, index) => (
-            <div
-              key={index}
-              className="bg-white p-6 rounded-lg shadow-md flex flex-col justify-between"
-              style={{
-                width: "300px",
-                height: "550px",
-                margin: "0 auto",
-              }}
-            >
-              <div className="text-center">
-                <p className="text-gray-500 text-sm font-medium mb-2">
-                  {program.category}
-                </p>
-                <h2 className="text-2xl font-bold mb-1">{program.title}</h2>
-                <p className="text-gray-400 text-base mb-4">
-                  {program.subtitle}
-                </p>
-                <p className="text-gray-700 text-sm mb-4">
-                  {program.description}
-                </p>
+        {programs.map((club, clubIndex) => (
+          <div key={clubIndex} className="mb-12">
+            {/* Club Title */}
+            <h2 className="text-2xl font-bold mb-6 px-4 text-left">
+              {club.club}
+            </h2>
+
+            {/* Scrollable Container for Program Cards */}
+            <div className="overflow-x-auto whitespace-nowrap scrollbar-hide">
+              <div className="flex space-x-6 pl-4">
+                {club.programs.map((program, pIndex) => (
+                  <div
+                    key={pIndex}
+                    className="p-6 rounded-lg shadow-md flex flex-col justify-between"
+                    style={{
+                      width: "300px",
+                      height: "600px", // Set fixed height
+                      flex: "0 0 auto",
+                      wordWrap: "break-word",
+                      whiteSpace: "normal",
+                      backgroundColor: "#f8f8f8", // Set background color
+                    }}
+                  >
+                    {/* Program Category & Title */}
+                    <div className="text-center">
+                      <p className="text-gray-500 text-sm font-medium mb-2 uppercase">
+                        Soccer
+                      </p>
+                      <h3 className="text-2xl font-bold mb-1">
+                        {program.ageGroup}
+                      </h3>
+                      <p className="text-gray-400 text-base mb-4">
+                        {program.season}
+                      </p>
+                    </div>
+
+                    <hr className="border-t-2 border-[#bce0fd] my-4" />
+
+                    {/* Program Details */}
+                    <div className="text-left px-2">
+                      <ul className="list-none space-y-2 text-[#3fa9f5] text-sm">
+                        <li>{program.fee}</li>
+                        <li>{program.locations.join(", ")}</li>
+                        {program.details.map((detail, index) => (
+                          <li key={index} className="break-words">
+                            {detail}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <hr className="border-t-2 border-[#bce0fd] my-4" />
+
+                    <a
+                      href={redirectUrl}
+                      className="block bg-[#3FA9F5] text-white text-center py-2 rounded hover:bg-[#349cd7] transition duration-300"
+                    >
+                      Join Now
+                    </a>
+                  </div>
+                ))}
               </div>
-              <hr />
-              <div className="text-center mb-6">
-                <ul className="list-none space-y-1 text-blue-500 text-sm">
-                  {program.offerings.map((offering, idx) => (
-                    <li key={idx}>{offering}</li>
-                  ))}
-                </ul>
-              </div>
-              <hr />
-              <a
-                href={redirectUrl}
-                className="block bg-blue-500 text-white text-center py-2 rounded hover:bg-blue-600 transition duration-300"
-              >
-                Join Now
-              </a>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </div>
   );
