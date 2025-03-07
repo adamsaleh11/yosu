@@ -88,9 +88,12 @@ export default function Home() {
           </div>
 
           {/* Call-to-Action Button */}
-          <button className="px-4 sm:px-6 py-2 border-2 border-white text-white rounded hover:bg-white hover:text-black transition">
+          <a
+            href="/programs"
+            className="px-4 sm:px-6 py-2 border-2 border-white text-white rounded hover:bg-white hover:text-black transition inline-block text-center"
+          >
             Sign Up
-          </button>
+          </a>
         </div>
       </div>
 
