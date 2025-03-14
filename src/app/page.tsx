@@ -66,11 +66,11 @@ export default function Home() {
                 className="flex-shrink-0 w-full h-full snap-center relative"
               >
                 <div
-                  className="absolute inset-0 bg-cover bg-center"
+                  className="absolute inset-0 bg-cover"
                   style={{
                     backgroundImage: `url(${image})`,
                     backgroundSize: "cover",
-                    backgroundPosition: "center",
+                    backgroundPosition: index === 0 ? "65% center" : "center",
                   }}
                 ></div>
               </div>
