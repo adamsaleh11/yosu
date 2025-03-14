@@ -45,16 +45,16 @@ export const Programs: React.FC<ProgramsProps> = ({ redirectUrl }) => {
   return (
     <div className="programs-section bg-[#F5F5F5] w-full py-12">
       <div className="container mx-auto text-center">
-        <h1 className="text-3xl font-bold mb-4">Programs</h1>
+        <h1 className="text-3xl font-bold mb-4 text-black">Programs</h1>{" "}
+        {/* Added text-black */}
         <p className="text-gray-600 mb-8 px-4"></p>
-
         {/* Dropdown Menu for Club Selection */}
         <div className="flex justify-start mb-8 pl-4">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button
                 variant="outline"
-                className="flex items-center gap-2 text-xl font-bold px-6 py-3"
+                className="flex items-center gap-2 text-xl font-bold px-6 py-3 text-black" //Added text-black
               >
                 <Users className="w-6 h-6" />
                 {selectedClub || "Loading..."}
@@ -62,12 +62,15 @@ export const Programs: React.FC<ProgramsProps> = ({ redirectUrl }) => {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
-              <DropdownMenuLabel>Select a Club</DropdownMenuLabel>
+              <DropdownMenuLabel className="text-black">
+                Select a Club
+              </DropdownMenuLabel>
               <DropdownMenuSeparator />
               {clubs.map((club, index) => (
                 <DropdownMenuItem
                   key={index}
                   onClick={() => setSelectedClub(club)}
+                  className="text-black" //Added text-black
                 >
                   {club}
                 </DropdownMenuItem>
@@ -75,7 +78,6 @@ export const Programs: React.FC<ProgramsProps> = ({ redirectUrl }) => {
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
-
         {/* Display Programs for Selected Club */}
         {selectedClub && (
           <div className="overflow-x-auto whitespace-nowrap scrollbar-hide">
@@ -94,13 +96,13 @@ export const Programs: React.FC<ProgramsProps> = ({ redirectUrl }) => {
                   }}
                 >
                   <div className="text-center">
-                    <p className="text-gray-500 text-sm font-medium mb-2 uppercase">
+                    <p className="text-gray-500 text-sm font-medium mb-2 uppercase text-black">
                       Soccer
                     </p>
-                    <h3 className="text-2xl font-bold mb-1">
+                    <h3 className="text-2xl font-bold mb-1 text-black">
                       {program.ageGroup}
                     </h3>
-                    <p className="text-gray-400 text-base mb-4">
+                    <p className="text-gray-400 text-base mb-4 text-black">
                       {program.season}
                     </p>
                   </div>

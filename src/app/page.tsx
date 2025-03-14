@@ -63,12 +63,17 @@ export default function Home() {
             ].map((image, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 w-full h-full bg-cover bg-center snap-center"
-                style={{
-                  backgroundImage: `url(${image})`,
-                  backgroundPosition: index === 1 ? "center -50px" : "center",
-                }}
-              ></div>
+                className="flex-shrink-0 w-full h-full snap-center relative"
+              >
+                <div
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{
+                    backgroundImage: `url(${image})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                ></div>
+              </div>
             ))}
           </div>
 
