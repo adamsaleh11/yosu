@@ -13,9 +13,14 @@ import {
 } from "./dropdown";
 import { Button } from "./button";
 
-export const Programs = () => {
+// Define props interface
+interface ProgramsProps {
+  redirectUrl: string;
+}
+
+export const Programs: React.FC<ProgramsProps> = ({ redirectUrl }) => {
   const router = useRouter();
-  const clubs = [...new Set(programs.map((club) => club.club))]; // Unique club names
+  const clubs = Array.from(new Set(programs.map((club) => club.club)));
   const [selectedClub, setSelectedClub] = useState<string | null>(null);
 
   // Automatically set the first club on load
@@ -29,25 +34,31 @@ export const Programs = () => {
   const selectedClubPrograms =
     programs.find((club) => club.club === selectedClub)?.programs || [];
 
+  const handleJoinNow = (ageGroup: string, club: string, season: string) => {
+    // Include season in the URL parameters
+    const url = `${redirectUrl}?ageGroup=${encodeURIComponent(
+      ageGroup
+    )}&club=${encodeURIComponent(club)}&season=${encodeURIComponent(season)}`;
+    router.push(url);
+  };
+
   return (
     <div className="programs-section bg-[#F5F5F5] w-full py-12">
       <div className="container mx-auto text-center">
         <h1 className="text-3xl font-bold mb-4">Programs</h1>
         <p className="text-gray-600 mb-8 px-4"></p>
 
-        {/* Dropdown Menu for Club Selection - Aligned with First Program Card */}
+        {/* Dropdown Menu for Club Selection */}
         <div className="flex justify-start mb-8 pl-4">
-          {" "}
-          {/* Align to first program card */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button
                 variant="outline"
                 className="flex items-center gap-2 text-xl font-bold px-6 py-3"
               >
-                <Users className="w-6 h-6" /> {/* Users icon */}
+                <Users className="w-6 h-6" />
                 {selectedClub || "Loading..."}
-                <ChevronDown className="w-5 h-5 ml-2" /> {/* Dropdown Arrow */}
+                <ChevronDown className="w-5 h-5 ml-2" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
@@ -56,7 +67,7 @@ export const Programs = () => {
               {clubs.map((club, index) => (
                 <DropdownMenuItem
                   key={index}
-                  onClick={() => setSelectedClub(() => club)}
+                  onClick={() => setSelectedClub(club)}
                 >
                   {club}
                 </DropdownMenuItem>
@@ -75,14 +86,13 @@ export const Programs = () => {
                   className="p-6 rounded-lg shadow-md flex flex-col justify-between"
                   style={{
                     width: "300px",
-                    height: "600px", // Set fixed height
+                    height: "600px",
                     flex: "0 0 auto",
                     wordWrap: "break-word",
                     whiteSpace: "normal",
-                    backgroundColor: "#f8f8f8", // Set background color
+                    backgroundColor: "#f8f8f8",
                   }}
                 >
-                  {/* Program Category & Title */}
                   <div className="text-center">
                     <p className="text-gray-500 text-sm font-medium mb-2 uppercase">
                       Soccer
@@ -97,7 +107,6 @@ export const Programs = () => {
 
                   <hr className="border-t-2 border-[#bce0fd] my-4" />
 
-                  {/* Program Details with ⚽️ emoji */}
                   <div className="text-left px-2">
                     <ul className="list-none space-y-2 text-[#3fa9f5] text-sm">
                       <li>{program.fee}</li>
@@ -114,8 +123,10 @@ export const Programs = () => {
 
                   <button
                     onClick={() =>
-                      router.push(
-                        `/registration?ageGroup=${program.ageGroup}&club=${selectedClub}`
+                      handleJoinNow(
+                        program.ageGroup,
+                        selectedClub,
+                        program.season
                       )
                     }
                     className="block bg-[#3FA9F5] text-white text-center py-2 rounded hover:bg-[#349cd7] transition duration-300"

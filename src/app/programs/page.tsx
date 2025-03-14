@@ -29,7 +29,7 @@ export default function ProgramsPage() {
         {" "}
         {/* Grey background */}
         <div className="container mx-auto py-8 sm:py-16 px-4">
-          <Programs redirectUrl="/contact" />{" "}
+          <Programs redirectUrl="/registration" />{" "}
         </div>
       </main>
 

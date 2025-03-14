@@ -7,8 +7,14 @@ import { Programs } from "@/components/programs";
 import { Footer } from "@/components/footer";
 import { useRef } from "react";
 
+// Define props interface for Programs component if it accepts redirectUrl
+interface ProgramsProps {
+  redirectUrl: string;
+}
+
 export default function Home() {
-  const carouselRef = useRef(null);
+  // Specify the type for the ref as HTMLDivElement
+  const carouselRef = useRef<HTMLDivElement>(null);
 
   const scrollLeft = () => {
     if (carouselRef.current) {
@@ -42,7 +48,7 @@ export default function Home() {
             onClick={scrollLeft}
             className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75"
           >
-            &#8249;
+            ‹
           </button>
 
           {/* Carousel Content */}
@@ -71,7 +77,7 @@ export default function Home() {
             onClick={scrollRight}
             className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75"
           >
-            &#8250;
+            ›
           </button>
         </div>
 
