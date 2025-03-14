@@ -69,9 +69,14 @@ const RegistrationForm = () => {
           name="ageGroup"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Age Group</FormLabel>
+              <FormLabel className="text-black">Age Group</FormLabel>
               <FormControl>
-                <Input placeholder="U4-5" {...field} disabled />
+                <Input
+                  placeholder="U4-5"
+                  {...field}
+                  disabled
+                  className="text-black disabled:text-black disabled:opacity-100"
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -82,12 +87,13 @@ const RegistrationForm = () => {
           name="club"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Club</FormLabel>
+              <FormLabel className="text-black">Club</FormLabel>
               <FormControl>
                 <Input
                   placeholder="Alta Vista/Canterbury SC"
                   {...field}
                   disabled
+                  className="text-black disabled:text-black disabled:opacity-100"
                 />
               </FormControl>
               <FormMessage />
@@ -99,9 +105,14 @@ const RegistrationForm = () => {
           name="season"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Season</FormLabel>
+              <FormLabel className="text-black">Season</FormLabel>
               <FormControl>
-                <Input placeholder="Spring 2025" {...field} disabled />
+                <Input
+                  placeholder="Spring 2025"
+                  {...field}
+                  disabled
+                  className="text-black disabled:text-black disabled:opacity-100"
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -112,9 +123,13 @@ const RegistrationForm = () => {
           name="parentName"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Parent Name</FormLabel>
+              <FormLabel className="text-black">Parent Name</FormLabel>
               <FormControl>
-                <Input placeholder="John Doe" {...field} />
+                <Input
+                  placeholder="John Doe"
+                  {...field}
+                  className="text-black placeholder:text-gray-500"
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -125,9 +140,13 @@ const RegistrationForm = () => {
           name="childName"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Child Name</FormLabel>
+              <FormLabel className="text-black">Child Name</FormLabel>
               <FormControl>
-                <Input placeholder="Jane Doe" {...field} />
+                <Input
+                  placeholder="Jane Doe"
+                  {...field}
+                  className="text-black placeholder:text-gray-500"
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -138,9 +157,14 @@ const RegistrationForm = () => {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email</FormLabel>
+              <FormLabel className="text-black">Email</FormLabel>
               <FormControl>
-                <Input type="email" placeholder="you@example.com" {...field} />
+                <Input
+                  type="email"
+                  placeholder="you@example.com"
+                  {...field}
+                  className="text-black placeholder:text-gray-500"
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
