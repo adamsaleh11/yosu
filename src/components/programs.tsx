@@ -43,22 +43,22 @@ export const Programs: React.FC<ProgramsProps> = ({ redirectUrl }) => {
   };
 
   return (
-    <div className="programs-section bg-[#F5F5F5] w-full py-12">
+    <div className="programs-section bg-[#F5F5F5] w-full py-8 sm:py-12">
       <div className="container mx-auto text-center">
-        <h1 className="text-3xl font-bold mb-4">Programs</h1>
-        <p className="text-gray-600 mb-8 px-4"></p>
+        <h1 className="text-2xl sm:text-3xl font-bold mb-4">Programs</h1>
+        <p className="text-gray-600 mb-6 sm:mb-8 px-4"></p>
 
         {/* Dropdown Menu for Club Selection */}
-        <div className="flex justify-start mb-8 pl-4">
+        <div className="flex justify-center sm:justify-start mb-6 sm:mb-8 px-4 sm:pl-4">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button
                 variant="outline"
-                className="flex items-center gap-2 text-xl font-bold px-6 py-3"
+                className="flex items-center gap-2 text-lg sm:text-xl font-bold px-4 sm:px-6 py-2 sm:py-3 w-full sm:w-auto"
               >
-                <Users className="w-6 h-6" />
+                <Users className="w-5 h-5 sm:w-6 sm:h-6" />
                 {selectedClub || "Loading..."}
-                <ChevronDown className="w-5 h-5 ml-2" />
+                <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
@@ -78,15 +78,15 @@ export const Programs: React.FC<ProgramsProps> = ({ redirectUrl }) => {
 
         {/* Display Programs for Selected Club */}
         {selectedClub && (
-          <div className="overflow-x-auto whitespace-nowrap scrollbar-hide">
-            <div className="flex space-x-6 pl-4">
+          <div className="overflow-x-auto whitespace-nowrap scrollbar-hide pb-4">
+            <div className="flex space-x-4 sm:space-x-6 px-4">
               {selectedClubPrograms.map((program, pIndex) => (
                 <div
                   key={pIndex}
-                  className="p-6 rounded-lg shadow-md flex flex-col justify-between"
+                  className="p-4 sm:p-6 rounded-lg shadow-md flex flex-col justify-between"
                   style={{
-                    width: "300px",
-                    height: "600px",
+                    width: "250px",
+                    height: "550px",
                     flex: "0 0 auto",
                     wordWrap: "break-word",
                     whiteSpace: "normal",
@@ -94,21 +94,21 @@ export const Programs: React.FC<ProgramsProps> = ({ redirectUrl }) => {
                   }}
                 >
                   <div className="text-center">
-                    <p className="text-gray-500 text-sm font-medium mb-2 uppercase">
+                    <p className="text-gray-500 text-xs sm:text-sm font-medium mb-2 uppercase">
                       Soccer
                     </p>
-                    <h3 className="text-2xl font-bold mb-1">
+                    <h3 className="text-xl sm:text-2xl font-bold mb-1">
                       {program.ageGroup}
                     </h3>
-                    <p className="text-gray-400 text-base mb-4">
+                    <p className="text-gray-700 text-sm sm:text-base mb-4">
                       {program.season}
                     </p>
                   </div>
 
-                  <hr className="border-t-2 border-[#bce0fd] my-4" />
+                  <hr className="border-t-2 border-[#bce0fd] my-3 sm:my-4" />
 
-                  <div className="text-left px-2">
-                    <ul className="list-none space-y-2 text-[#3fa9f5] text-sm">
+                  <div className="text-left px-1 sm:px-2">
+                    <ul className="list-none space-y-2 text-[#2a80bd] text-xs sm:text-sm font-medium">
                       <li>{program.fee}</li>
                       <li>{program.locations.join(", ")}</li>
                       {program.details.map((detail, index) => (
@@ -119,7 +119,7 @@ export const Programs: React.FC<ProgramsProps> = ({ redirectUrl }) => {
                     </ul>
                   </div>
 
-                  <hr className="border-t-2 border-[#bce0fd] my-4" />
+                  <hr className="border-t-2 border-[#bce0fd] my-3 sm:my-4" />
 
                   <button
                     onClick={() =>
@@ -129,7 +129,7 @@ export const Programs: React.FC<ProgramsProps> = ({ redirectUrl }) => {
                         program.season
                       )
                     }
-                    className="block bg-[#3FA9F5] text-white text-center py-2 rounded hover:bg-[#349cd7] transition duration-300"
+                    className="block bg-[#3FA9F5] text-white text-center py-2 rounded hover:bg-[#349cd7] transition duration-300 font-medium"
                   >
                     Join Now
                   </button>
