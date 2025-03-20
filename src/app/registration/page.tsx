@@ -16,9 +16,9 @@ import {
 import { Input } from "@/components/input";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm as useFormspree } from "@formspree/react";
 import { z } from "zod";
 
-// Updated form schema to include season
 const formSchema = z.object({
   ageGroup: z
     .string()
@@ -30,7 +30,6 @@ const formSchema = z.object({
   email: z.string().email({ message: "Invalid email address." }),
 });
 
-// Client-side form component
 const RegistrationForm = () => {
   const searchParams = useSearchParams();
   if (!searchParams) {
@@ -53,9 +52,15 @@ const RegistrationForm = () => {
     },
   });
 
+  const [state, handleSubmit] = useFormspree("xnnpjwvy");
+
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    // Add your form submission logic here
+    const formData = new FormData();
+    Object.entries(values).forEach(([key, value]) => {
+      formData.append(key, value as string);
+    });
+
+    handleSubmit(formData as any);
   }
 
   return (
@@ -170,15 +175,19 @@ const RegistrationForm = () => {
             </FormItem>
           )}
         />
-        <Button type="submit" className="w-full">
-          Submit
+        <Button type="submit" className="w-full" disabled={state.submitting}>
+          {state.submitting ? "Submitting..." : "Submit"}
         </Button>
+        {state.succeeded && (
+          <p className="text-green-600 text-center">
+            Thank you! Your registration has been submitted.
+          </p>
+        )}
       </form>
     </Form>
   );
 };
 
-// Main page component
 export default function RegistrationPage() {
   return (
     <div className="registration-page bg-white min-h-screen flex flex-col relative">
