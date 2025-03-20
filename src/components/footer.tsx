@@ -21,11 +21,10 @@ export const Footer = () => {
             <p className="text-sm">
               Email:{" "}
               <a href="mailto:info@yourwebsite.com" className="hover:underline">
-                info@yourwebsite.com
+                zijo.nistovic@gmail.com
               </a>
             </p>
-            <p className="text-sm">Phone: +1 (555) 123-4567</p>
-            <p className="text-sm">Address: 123 Main Street, Ottawa, ON</p>
+            <p className="text-sm">Phone: +1 (613) 276-9031</p>
           </div>
 
           {/* Quick Links */}
