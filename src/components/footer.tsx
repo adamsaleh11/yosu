@@ -20,7 +20,10 @@ export const Footer = () => {
             <h4 className="text-lg font-bold mb-4">Contact</h4>
             <p className="text-sm">
               Email:{" "}
-              <a href="mailto:info@yourwebsite.com" className="hover:underline">
+              <a
+                href="mailto:zijo.nistovic@gmail.com"
+                className="hover:underline"
+              >
                 zijo.nistovic@gmail.com
               </a>
             </p>
@@ -69,7 +72,16 @@ export const Footer = () => {
 
         {/* Footer Credits */}
         <div className="mt-8 text-center text-xs sm:text-sm">
-          © {new Date().getFullYear()} Saleh Groups. All rights reserved.
+          © {new Date().getFullYear()}{" "}
+          <a
+            href="https://saleh-software.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-gray-200 font-semibold"
+          >
+            Saleh Groups
+          </a>
+          . All rights reserved.
         </div>
       </div>
     </footer>
