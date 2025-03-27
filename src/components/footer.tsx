@@ -69,8 +69,7 @@ export const Footer = () => {
 
         {/* Footer Credits */}
         <div className="mt-8 text-center text-xs sm:text-sm">
-          © {new Date().getFullYear()} Youth Ottawa Sports Universe. All rights
-          reserved.
+          © {new Date().getFullYear()} Saleh Groups. All rights reserved.
         </div>
       </div>
     </footer>
