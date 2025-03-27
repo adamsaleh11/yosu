@@ -29,15 +29,15 @@ export default function AboutPage() {
       <div className="container mx-auto px-4 py-8 sm:py-16">
         {/* Section 1 */}
         <section className="mb-16">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-6">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-black">
             Building Confidence and Skills Through Sports
           </h2>
           <div className="flex flex-col lg:flex-row items-start gap-8">
             <div className="lg:w-1/2 text-sm sm:text-base leading-relaxed text-gray-700">
               <p className="mb-4">
-                At YOSU, we’re a community group of ex-soccer, basketball,
+                At YOSU, we're a community group of ex-soccer, basketball,
                 tennis, and volleyball players, sports coaches, and sports
-                enthusiasts. We’re proud to be the first sports organization in
+                enthusiasts. We're proud to be the first sports organization in
                 Ottawa to offer multiple sports (both individual and team
                 sports) for young athletes. Our unique approach gives children
                 the opportunity to explore different sports at an early stage of
@@ -52,7 +52,7 @@ export default function AboutPage() {
                 Whether your child is just starting out or looking to improve
                 their skills, our programs cater to all levels. With experienced
                 coaches, age-appropriate training, and a focus on sportsmanship,
-                we’re here to help your child grow both on and off the field.
+                we're here to help your child grow both on and off the field.
               </p>
               <p className="mb-4">
                 Our methodology of two days of activities per week (practice and
@@ -82,13 +82,13 @@ export default function AboutPage() {
           {/* Subtitle and Paragraph */}
           <div className="flex flex-col lg:flex-row items-start gap-8 mb-8">
             <div className="lg:w-1/2">
-              <h2 className="text-2xl sm:text-3xl font-bold">
+              <h2 className="text-2xl sm:text-3xl font-bold text-black">
                 Why Choose Our Youth Sports League?
               </h2>
             </div>
             <div className="lg:w-1/2 text-sm sm:text-base leading-relaxed text-gray-700">
               <p>
-                Our league is more than just soccer—it’s a community. We offer
+                Our league is more than just soccer—it's a community. We offer
                 programs for kids of all ages, from U4 to U10, with flexible
                 schedules and affordable fees. From spring to fall, we provide a
                 variety of leagues and events to keep your child active and
@@ -124,7 +124,14 @@ export default function AboutPage() {
           </div>
 
           {/* Images Section */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <Image
+              src="/about2.png"
+              alt="Kids practicing soccer"
+              width={300}
+              height={200}
+              className="rounded-lg object-cover w-full h-[250px]"
+            />
             <Image
               src="/about3.png"
               alt="Kids practicing soccer"
