@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Head from "next/head";
 import "./globals.css";
+import { Space_Grotesk } from "next/font/google";
+
+const font = Space_Grotesk({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "YOSU | Youth Ottawa Sports Universe",
@@ -76,7 +79,7 @@ export default function RootLayout({
           }}
         />
       </Head>
-      <body>{children}</body>
+      <body className={`${font.className}`}>{children}</body>
     </html>
   );
 }
